@@ -100,6 +100,10 @@ function outputMatches($data, $matchIndex) {
 
         $matchPlayers = [];
         foreach ($match['games'] as $game) {
+            $result = $game['result'];
+            $pointValue = $result === 2 ? 2 : ($result === 1 ? 1 : 0);
+            $pointsPerPlayer = $game['type'] === 'single' ? $pointValue : $pointValue / 2;
+
             foreach ($game['players'] as $playerId) {
                 if (!isset($matchPlayers[$playerId])) {
                     $matchPlayers[$playerId] = [
@@ -109,10 +113,14 @@ function outputMatches($data, $matchIndex) {
                         'wins' => 0,
                         'losses' => 0,
                         'ties' => 0,
+                        'pointsEarned' => 0,
+                        'pointsPossible' => 0,
                         'gamesByType' => []
                     ];
                 }
                 $matchPlayers[$playerId]['gamesPlayed']++;
+                $matchPlayers[$playerId]['pointsPossible'] += 2;
+                $matchPlayers[$playerId]['pointsEarned'] += $pointsPerPlayer;
 
                 if ($game['result'] === 2) {
                     $matchPlayers[$playerId]['wins']++;
@@ -141,6 +149,14 @@ function outputMatches($data, $matchIndex) {
                 }
             }
         }
+
+        foreach ($matchPlayers as &$player) {
+            $player['reachPointsPercentage'] = $player['pointsPossible'] > 0 ? round(($player['pointsEarned'] / $player['pointsPossible']) * 100, 2) : 0;
+        }
+
+        usort($matchPlayers, function ($a, $b) {
+            return $b['reachPointsPercentage'] <=> $a['reachPointsPercentage'];
+        });
 
         echo json_encode([
             'match' => [
@@ -190,14 +206,19 @@ function outputStats($data) {
                 'played' => 0,
                 'wins' => 0,
                 'losses' => 0,
-                'ties' => 0
+                'ties' => 0,
+                'pointsEarned' => 0,
+                'pointsPossible' => 0
             ],
             'doubles' => [
                 'played' => 0,
                 'wins' => 0,
                 'losses' => 0,
-                'ties' => 0
-            ]
+                'ties' => 0,
+                'pointsEarned' => 0,
+                'pointsPossible' => 0
+            ],
+            'reachPointsPercentage' => 0
         ];
     }
 
@@ -205,6 +226,9 @@ function outputStats($data) {
         foreach ($match['games'] as $game) {
             $gameType = $game['type'] === 'single' ? 'singles' : 'doubles';
             $result = $game['result'];
+            $pointValue = $result === 2 ? 2 : ($result === 1 ? 1 : 0);
+            $pointsPerPlayer = $gameType === 'singles' ? $pointValue : $pointValue / 2;
+            $maxPointsPerPlayer = $gameType === 'singles' ? 2 : 1;
 
             if ($gameType === 'singles') {
                 if ($result === 2) $singlesWins++;
@@ -220,6 +244,8 @@ function outputStats($data) {
                 if (!isset($playerStats[$playerId])) continue;
 
                 $playerStats[$playerId][$gameType]['played']++;
+                $playerStats[$playerId][$gameType]['pointsPossible'] += $maxPointsPerPlayer;
+                $playerStats[$playerId][$gameType]['pointsEarned'] += $pointsPerPlayer;
 
                 if ($result === 2) {
                     $playerStats[$playerId][$gameType]['wins']++;
@@ -231,6 +257,16 @@ function outputStats($data) {
             }
         }
     }
+
+    foreach ($playerStats as &$player) {
+        $totalPointsEarned = $player['singles']['pointsEarned'] + $player['doubles']['pointsEarned'];
+        $totalPointsPossible = $player['singles']['pointsPossible'] + $player['doubles']['pointsPossible'];
+        $player['reachPointsPercentage'] = $totalPointsPossible > 0 ? round(($totalPointsEarned / $totalPointsPossible) * 100, 2) : 0;
+    }
+
+    usort($playerStats, function ($a, $b) {
+        return $b['reachPointsPercentage'] <=> $a['reachPointsPercentage'];
+    });
 
     echo json_encode([
         'team' => [
