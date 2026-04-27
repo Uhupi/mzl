@@ -82,8 +82,76 @@ function outputMatches($data, $matchIndex) {
         }
 
         $match = $data['matches'][$matchIndex];
-        $match['playerNames'] = enrichPlayersWithNames($match['games'], $data['team']['players']);
-        echo json_encode(['match' => $match]);
+        $playerMap = array_column($data['team']['players'], 'name', 'id');
+
+        $games = array_map(function ($game) use ($playerMap) {
+            return [
+                'type' => $game['type'],
+                'result' => $game['result'],
+                'resultText' => ['loss', 'tie', 'win'][$game['result']],
+                'players' => array_map(function ($id) use ($playerMap) {
+                    return [
+                        'id' => $id,
+                        'name' => $playerMap[$id] ?? 'Unknown'
+                    ];
+                }, $game['players'])
+            ];
+        }, $match['games']);
+
+        $matchPlayers = [];
+        foreach ($match['games'] as $game) {
+            foreach ($game['players'] as $playerId) {
+                if (!isset($matchPlayers[$playerId])) {
+                    $matchPlayers[$playerId] = [
+                        'id' => $playerId,
+                        'name' => $playerMap[$playerId] ?? 'Unknown',
+                        'gamesPlayed' => 0,
+                        'wins' => 0,
+                        'losses' => 0,
+                        'ties' => 0,
+                        'gamesByType' => []
+                    ];
+                }
+                $matchPlayers[$playerId]['gamesPlayed']++;
+
+                if ($game['result'] === 2) {
+                    $matchPlayers[$playerId]['wins']++;
+                } elseif ($game['result'] === 1) {
+                    $matchPlayers[$playerId]['ties']++;
+                } else {
+                    $matchPlayers[$playerId]['losses']++;
+                }
+
+                if (!isset($matchPlayers[$playerId]['gamesByType'][$game['type']])) {
+                    $matchPlayers[$playerId]['gamesByType'][$game['type']] = [
+                        'count' => 0,
+                        'wins' => 0,
+                        'losses' => 0,
+                        'ties' => 0
+                    ];
+                }
+                $matchPlayers[$playerId]['gamesByType'][$game['type']]['count']++;
+
+                if ($game['result'] === 2) {
+                    $matchPlayers[$playerId]['gamesByType'][$game['type']]['wins']++;
+                } elseif ($game['result'] === 1) {
+                    $matchPlayers[$playerId]['gamesByType'][$game['type']]['ties']++;
+                } else {
+                    $matchPlayers[$playerId]['gamesByType'][$game['type']]['losses']++;
+                }
+            }
+        }
+
+        echo json_encode([
+            'match' => [
+                'opponent' => $match['opponent'],
+                'date' => $match['date'],
+                'result' => $match['result'],
+                'home' => $match['home'],
+                'games' => $games,
+                'players' => array_values($matchPlayers)
+            ]
+        ]);
         return;
     }
 
@@ -106,46 +174,59 @@ function outputMatches($data, $matchIndex) {
 
 function outputStats($data) {
     $matches = $data['matches'];
-    $wins = 0;
-    $ties = 0;
-    $losses = 0;
-
-    foreach ($matches as $match) {
-        if ($match['result'] > 13) $wins++;
-        elseif ($match['result'] === 13) $ties++;
-        else $losses++;
-    }
+    $singlesWins = 0;
+    $singlesTies = 0;
+    $singlesLosses = 0;
+    $doublesWins = 0;
+    $doublesTies = 0;
+    $doublesLosses = 0;
 
     $playerStats = [];
     foreach ($data['team']['players'] as $player) {
         $playerStats[$player['id']] = [
             'name' => $player['name'],
             'id' => $player['id'],
-            'singles' => 0,
-            'doubles' => 0,
-            'wins' => 0,
-            'losses' => 0,
-            'ties' => 0
+            'singles' => [
+                'played' => 0,
+                'wins' => 0,
+                'losses' => 0,
+                'ties' => 0
+            ],
+            'doubles' => [
+                'played' => 0,
+                'wins' => 0,
+                'losses' => 0,
+                'ties' => 0
+            ]
         ];
     }
 
     foreach ($matches as $match) {
         foreach ($match['games'] as $game) {
+            $gameType = $game['type'] === 'single' ? 'singles' : 'doubles';
+            $result = $game['result'];
+
+            if ($gameType === 'singles') {
+                if ($result === 2) $singlesWins++;
+                elseif ($result === 1) $singlesTies++;
+                else $singlesLosses++;
+            } else {
+                if ($result === 2) $doublesWins++;
+                elseif ($result === 1) $doublesTies++;
+                else $doublesLosses++;
+            }
+
             foreach ($game['players'] as $playerId) {
                 if (!isset($playerStats[$playerId])) continue;
 
-                if ($game['type'] === 'single') {
-                    $playerStats[$playerId]['singles']++;
-                } else {
-                    $playerStats[$playerId]['doubles']++;
-                }
+                $playerStats[$playerId][$gameType]['played']++;
 
-                if ($game['result'] === 2) {
-                    $playerStats[$playerId]['wins']++;
-                } elseif ($game['result'] === 1) {
-                    $playerStats[$playerId]['ties']++;
+                if ($result === 2) {
+                    $playerStats[$playerId][$gameType]['wins']++;
+                } elseif ($result === 1) {
+                    $playerStats[$playerId][$gameType]['ties']++;
                 } else {
-                    $playerStats[$playerId]['losses']++;
+                    $playerStats[$playerId][$gameType]['losses']++;
                 }
             }
         }
@@ -154,9 +235,16 @@ function outputStats($data) {
     echo json_encode([
         'team' => [
             'matches' => count($matches),
-            'wins' => $wins,
-            'losses' => $losses,
-            'ties' => $ties
+            'singles' => [
+                'wins' => $singlesWins,
+                'losses' => $singlesLosses,
+                'ties' => $singlesTies
+            ],
+            'doubles' => [
+                'wins' => $doublesWins,
+                'losses' => $doublesLosses,
+                'ties' => $doublesTies
+            ]
         ],
         'players' => array_values($playerStats)
     ]);
