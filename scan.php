@@ -192,6 +192,7 @@ foreach ($match_links as $link) {
             $players_game = [];
             // For home matches, players are in heim_td; for away matches, players are in gast_td
             $player_td = $is_home ? $heim_td : $gast_td;
+            $opponent_td = $is_home ? $gast_td : $heim_td;
             $player_text = trim($player_td->textContent);
             if (!empty($player_text)) {
                 // Split by newlines and clean up
@@ -210,7 +211,26 @@ foreach ($match_links as $link) {
                 // If player cell is empty, add fallback placeholder
                 $players_game[] = '00-0000';
             }
-            $type = count($players_game) > 1 ? "double" : "single";
+
+            // Check opponent player count to determine game type
+            $opponent_text = trim($opponent_td->textContent);
+            $opponent_count = 0;
+            if (!empty($opponent_text)) {
+                $opponent_players = array_map('trim', explode("\n", $opponent_text));
+                $opponent_players = array_filter($opponent_players, function($p) { return !empty($p) && $p !== "\t\t\t\t\t\t\t\t"; });
+                $opponent_count = count($opponent_players);
+            } else {
+                $opponent_count = 1;
+            }
+
+            $type = (count($players_game) > 1 || $opponent_count > 1) ? "double" : "single";
+
+            // If it's a double but we have less than 2 players, pad with 00-0000
+            if ($type === "double" && count($players_game) < 2) {
+                while (count($players_game) < 2) {
+                    $players_game[] = '00-0000';
+                }
+            }
             $games[] = ['players' => $players_game, 'type' => $type, 'result' => $result_game];
         }
     }
