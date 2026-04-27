@@ -179,12 +179,24 @@ foreach ($match_links as $link) {
             if (count($scores) == 2) {
                 $heim_score = (int)$scores[0];
                 $gast_score = (int)$scores[1];
-                if ($heim_score > $gast_score) {
-                    $result_game = 2;
-                } elseif ($heim_score == $gast_score) {
-                    $result_game = 1;
+
+                // Determine result based on whether we're home or away
+                if ($is_home) {
+                    if ($heim_score > $gast_score) {
+                        $result_game = 2;
+                    } elseif ($heim_score == $gast_score) {
+                        $result_game = 1;
+                    } else {
+                        $result_game = 0;
+                    }
                 } else {
-                    $result_game = 0;
+                    if ($gast_score > $heim_score) {
+                        $result_game = 2;
+                    } elseif ($gast_score == $heim_score) {
+                        $result_game = 1;
+                    } else {
+                        $result_game = 0;
+                    }
                 }
             } else {
                 continue;
