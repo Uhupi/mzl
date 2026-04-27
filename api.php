@@ -103,6 +103,7 @@ function outputMatches($data, $matchIndex) {
             $result = $game['result'];
             $pointValue = $result === 2 ? 2 : ($result === 1 ? 1 : 0);
             $pointsPerPlayer = $game['type'] === 'single' ? $pointValue : $pointValue / 2;
+            $maxPointsPerPlayer = $game['type'] === 'single' ? 2 : 1;
 
             foreach ($game['players'] as $playerId) {
                 if (!isset($matchPlayers[$playerId])) {
@@ -119,7 +120,7 @@ function outputMatches($data, $matchIndex) {
                     ];
                 }
                 $matchPlayers[$playerId]['gamesPlayed']++;
-                $matchPlayers[$playerId]['pointsPossible'] += 2;
+                $matchPlayers[$playerId]['pointsPossible'] += $maxPointsPerPlayer;
                 $matchPlayers[$playerId]['pointsEarned'] += $pointsPerPlayer;
 
                 if ($game['result'] === 2) {
@@ -152,10 +153,12 @@ function outputMatches($data, $matchIndex) {
 
         foreach ($matchPlayers as &$player) {
             $player['reachPointsPercentage'] = $player['pointsPossible'] > 0 ? round(($player['pointsEarned'] / $player['pointsPossible']) * 100, 2) : 0;
+            $player['matchContributionPercentage'] = round(($player['pointsEarned'] / 8) * 100, 2);
+            $player['efficiency'] = round(($player['reachPointsPercentage'] + $player['matchContributionPercentage']) / 2, 2);
         }
 
         usort($matchPlayers, function ($a, $b) {
-            return $b['reachPointsPercentage'] <=> $a['reachPointsPercentage'];
+            return $b['efficiency'] <=> $a['efficiency'];
         });
 
         echo json_encode([
@@ -258,14 +261,25 @@ function outputStats($data) {
         }
     }
 
+    $totalTeamPoints = 0;
     foreach ($playerStats as &$player) {
         $totalPointsEarned = $player['singles']['pointsEarned'] + $player['doubles']['pointsEarned'];
         $totalPointsPossible = $player['singles']['pointsPossible'] + $player['doubles']['pointsPossible'];
         $player['reachPointsPercentage'] = $totalPointsPossible > 0 ? round(($totalPointsEarned / $totalPointsPossible) * 100, 2) : 0;
+        $totalTeamPoints += $totalPointsEarned;
+    }
+
+    foreach ($playerStats as &$player) {
+        $totalPointsEarned = $player['singles']['pointsEarned'] + $player['doubles']['pointsEarned'];
+        $matchesPlayed = $player['singles']['played'] + $player['doubles']['played'];
+        $maxPointsPerMatch = 8;
+        $maxPointsForPlayer = $matchesPlayed > 0 ? $maxPointsPerMatch * $matchesPlayed : 0;
+        $player['teamContributionPercentage'] = $maxPointsForPlayer > 0 ? round(($totalPointsEarned / $maxPointsForPlayer) * 100, 2) : 0;
+        $player['efficiency'] = round(($player['reachPointsPercentage'] + $player['teamContributionPercentage']) / 2, 2);
     }
 
     usort($playerStats, function ($a, $b) {
-        return $b['reachPointsPercentage'] <=> $a['reachPointsPercentage'];
+        return $b['efficiency'] <=> $a['efficiency'];
     });
 
     echo json_encode([
