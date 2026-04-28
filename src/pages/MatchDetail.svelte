@@ -58,7 +58,7 @@
               <th class="text-center py-3 px-4 font-semibold text-gray-700">Spiele</th>
               <th class="text-center py-3 px-4 font-semibold text-gray-700">Siege</th>
               <th class="text-center py-3 px-4 font-semibold text-gray-700">Niederlagen</th>
-              <th class="text-center py-3 px-4 font-semibold text-gray-700">Punkte</th>
+              <th class="text-center py-3 px-4 font-semibold text-gray-700">Punkte<br/><span class="text-xs font-normal">(erreicht/möglich)</span></th>
               <th class="text-center py-3 px-4 font-semibold text-gray-700">Effizienz</th>
             </tr>
           </thead>
