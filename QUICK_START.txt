@@ -1,0 +1,107 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                   🎯 KICKER STATISTIKEN - QUICK START 🎯                    ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┌─ SCHRITT 1: INSTALLATION ────────────────────────────────────────────────┐
+│                                                                            │
+│  cd frontend                                                               │
+│  npm install                                                               │
+│                                                                            │
+│  ⏱️  Dauert ~1-2 Minuten                                                   │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌─ SCHRITT 2: PHP BACKEND ─────────────────────────────────────────────────┐
+│                                                                            │
+│  In einem neuen Terminal:                                                 │
+│                                                                            │
+│  cd ..                          (zurück zum Root Verzeichnis)             │
+│  php -S localhost:8000          (PHP Server auf Port 8000)                │
+│  php scratch.php                (Daten generieren in data/5951.json)      │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌─ SCHRITT 3: APP STARTEN ─────────────────────────────────────────────────┐
+│                                                                            │
+│  Im Frontend Terminal (von Schritt 1):                                    │
+│                                                                            │
+│  npm run dev                                                               │
+│                                                                            │
+│  ✅ Browser öffnet automatisch: http://localhost:5173                     │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                              NAVIGATION                                     ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║                                                                             ║
+║  📊 ÜBERSICHT      → Team-Stats, Top 5 Spieler, letzte Spiele             ║
+║  🎯 SPIELE         → Alle Spiele Liste, klickbar für Details              ║
+║  👥 SPIELER        → Team-Rosette aller Spieler                           ║
+║  📈 STATISTIKEN    → Rankings, Bilanzen, Effizienz-Scores                 ║
+║                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                           WEITERE KOMMANDOS                                ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║                                                                             ║
+║  npm run build     → Production Build in dist/ Ordner                      ║
+║  npm run preview   → Lokale Preview von Production Build                   ║
+║  npm run check     → TypeScript/Svelte Type Checking                       ║
+║                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                        TERMINALS ÜBERSICHT                                  ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║                                                                             ║
+║  Terminal 1: npm run dev        → App läuft auf :5173                      ║
+║  Terminal 2: php -S localhost:8000 → API läuft auf :8000                   ║
+║                                                                             ║
+║  Beide müssen laufen!                                                      ║
+║                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                        FEHLERBEHEBUNG (FAQ)                                 ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║                                                                             ║
+║  ❌ "Cannot GET /api/team"                                                ║
+║     → PHP Server läuft nicht! Führe aus: php -S localhost:8000            ║
+║                                                                             ║
+║  ❌ "Module not found"                                                    ║
+║     → npm install nicht ausgeführt! Führe aus: npm install                ║
+║                                                                             ║
+║  ❌ "Keine Daten angezeigt"                                               ║
+║     → Führe php scratch.php aus (erzeugt Daten)                           ║
+║     → Refresh Browser (Ctrl+Shift+R für Hard Refresh)                     ║
+║                                                                             ║
+║  ❌ "Port 5173 already in use"                                            ║
+║     → Ein anderer Prozess nutzt Port 5173                                 ║
+║     → Beende andere npm run dev Sessions                                  ║
+║                                                                             ║
+║  ❌ "localhost:8000 refused to connect"                                   ║
+║     → PHP Server läuft nicht! Starte: php -S localhost:8000               ║
+║                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                          DOKUMENTATION                                      ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║                                                                             ║
+║  📖 README.md           → Detaillierte Dokumentation                       ║
+║  ⚡ SETUP.md             → Installation & Konfiguration                     ║
+║  📊 PROJECT_SUMMARY.md  → Komplette Projekt-Übersicht                      ║
+║                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                            ┃
+┃              ✅ Alles bereit? Viel Spaß mit der App! ⚽                  ┃
+┃                                                                            ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Version: 1.0.0
+Datum: 28.04.2026
+Team: Mut zur Lücke 🏆

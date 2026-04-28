@@ -1,13 +1,19 @@
 <?php
+// CORS headers must be set BEFORE any output
+ob_start();
 
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
+// Set CORS headers
+header('Access-Control-Allow-Origin: *', true);
+header('Access-Control-Allow-Methods: GET, OPTIONS, HEAD, POST', true);
+header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With', true);
+header('Access-Control-Max-Age: 86400', true);
+header('Access-Control-Allow-Credentials: false', true);
+header('Content-Type: application/json; charset=utf-8', true);
 
+// Handle CORS preflight requests
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
-    exit;
+    exit(0);
 }
 
 $dataFile = __DIR__ . '/data/5951.json';
@@ -57,6 +63,9 @@ try {
     };
 } catch (Exception $e) {
     http_response_code($e->getCode() ?: 400);
+    // Re-send CORS headers for error responses
+    header('Access-Control-Allow-Origin: *', true);
+    header('Content-Type: application/json; charset=utf-8', true);
     echo json_encode(['error' => $e->getMessage()]);
 }
 
@@ -321,3 +330,5 @@ function enrichPlayersWithNames($games, $players) {
         ];
     }, $games);
 }
+
+ob_end_flush();

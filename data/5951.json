@@ -1,0 +1,2237 @@
+{
+    "team": {
+        "name": "Mut zur Lücke",
+        "logo": "https:\/\/www.tfvb.de\/images\/sportsmanager\/mannschaften\/I5951T1753529527W240H240.png",
+        "players": [
+            {
+                "name": "Abdalla, Makram",
+                "id": "02-2536"
+            },
+            {
+                "name": "Albounny, Jawad",
+                "id": "02-2431"
+            },
+            {
+                "name": "Behrendt, Anja",
+                "id": "02-1468"
+            },
+            {
+                "name": "Bonacci, Claudia",
+                "id": "02-2392"
+            },
+            {
+                "name": "Celi, Vicente",
+                "id": "02-2481"
+            },
+            {
+                "name": "Dogadov, Sergej",
+                "id": "02-1206"
+            },
+            {
+                "name": "Kroehn, Phillip",
+                "id": "02-1592"
+            },
+            {
+                "name": "Lange, Santino",
+                "id": "02-2068"
+            },
+            {
+                "name": "Menzel, Axel",
+                "id": "02-2430"
+            },
+            {
+                "name": "Paj*, Theresa",
+                "id": "02-2393"
+            },
+            {
+                "name": "Zouini, Yassine",
+                "id": "02-2396"
+            }
+        ]
+    },
+    "matches": [
+        {
+            "opponent": "Megapeng",
+            "date": "2025-09-09 19:00:00",
+            "result": 14,
+            "home": false,
+            "games": [
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2431"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2481",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-2481"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2431",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-2481"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2431"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-2481"
+                    ],
+                    "type": "double",
+                    "result": 2
+                }
+            ]
+        },
+        {
+            "opponent": "Trommelfeuer",
+            "date": "2025-09-19 19:00:00",
+            "result": 20,
+            "home": true,
+            "games": [
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2393",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "opponent": "Kommando Erwin Kostedde",
+            "date": "2025-09-23 19:00:00",
+            "result": 18,
+            "home": false,
+            "games": [
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2481"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2481",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "opponent": "Wilde Bande",
+            "date": "2025-10-10 19:00:00",
+            "result": 24,
+            "home": true,
+            "games": [
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 2
+                }
+            ]
+        },
+        {
+            "opponent": "Yard Zupp Zupp und Olli",
+            "date": "2025-11-07 19:00:00",
+            "result": 17,
+            "home": true,
+            "games": [
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-1206"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2431"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2431"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-1206"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2431"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2431"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-1206"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2431"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2431"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-2393"
+                    ],
+                    "type": "double",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "opponent": "Flora Softer",
+            "date": "2025-11-28 19:15:00",
+            "result": 19,
+            "home": false,
+            "games": [
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2431"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2481",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2481",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2481"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2481",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2431"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2393"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2481",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "opponent": "Stangenfreunde",
+            "date": "2026-01-15 19:00:00",
+            "result": 14,
+            "home": false,
+            "games": [
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2481"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2481"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2481"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1468"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 1
+                }
+            ]
+        },
+        {
+            "opponent": "vamos cassiopeia",
+            "date": "2025-12-17 19:00:00",
+            "result": 14,
+            "home": true,
+            "games": [
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2481"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-2481"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2431"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-2481"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2481"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-2431"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2431"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-2431"
+                    ],
+                    "type": "double",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "opponent": "Zimt & Zunder",
+            "date": "2026-01-07 19:30:00",
+            "result": 11,
+            "home": false,
+            "games": [
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2481"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2481",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2481",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2481",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2481"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2481",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "opponent": "1. FZ Schneckenkicker",
+            "date": "2026-01-30 19:00:00",
+            "result": 21,
+            "home": true,
+            "games": [
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2536"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "00-0000",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "00-0000"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "00-0000",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2536"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "00-0000",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "00-0000"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "00-0000",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                }
+            ]
+        },
+        {
+            "opponent": "Megapeng",
+            "date": "2026-02-13 19:00:00",
+            "result": 20,
+            "home": true,
+            "games": [
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2393",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "opponent": "Trommelfeuer",
+            "date": "2026-03-10 20:00:00",
+            "result": 17,
+            "home": false,
+            "games": [
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2481"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2430",
+                        "02-2481"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "opponent": "Kommando Erwin Kostedde",
+            "date": "2026-03-20 19:00:00",
+            "result": 19,
+            "home": true,
+            "games": [
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2431"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2431",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2536"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2393",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "opponent": "Wilde Bande",
+            "date": "2026-04-09 20:00:00",
+            "result": 24,
+            "home": false,
+            "games": []
+        },
+        {
+            "opponent": "Yard Zupp Zupp und Olli",
+            "date": "2026-04-15 20:00:00",
+            "result": 13,
+            "home": false,
+            "games": [
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2536"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1468",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 2
+                }
+            ]
+        },
+        {
+            "opponent": "Flora Softer",
+            "date": "2026-04-24 19:00:00",
+            "result": 24,
+            "home": true,
+            "games": [
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "00-0000"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2536",
+                        "00-0000"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2536"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2536",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "00-0000"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2536",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2536",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2392",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 2
+                }
+            ]
+        },
+        {
+            "opponent": "Yard aber fair",
+            "date": "2025-10-17 19:00:00",
+            "result": 15,
+            "home": true,
+            "games": [
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2430",
+                        "02-2431"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2431"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2430",
+                        "02-2431"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2430"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2430",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2431"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2431",
+                        "02-2396"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068",
+                        "02-2392"
+                    ],
+                    "type": "double",
+                    "result": 0
+                }
+            ]
+        },
+        {
+            "opponent": "Pink Unicorns",
+            "date": "2025-12-05 19:00:00",
+            "result": 12,
+            "home": true,
+            "games": [
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2430"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-2393"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2396"
+                    ],
+                    "type": "single",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-2396",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-1206",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 0
+                },
+                {
+                    "players": [
+                        "02-2068"
+                    ],
+                    "type": "single",
+                    "result": 2
+                },
+                {
+                    "players": [
+                        "02-1592"
+                    ],
+                    "type": "single",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2393",
+                        "02-1592"
+                    ],
+                    "type": "double",
+                    "result": 1
+                },
+                {
+                    "players": [
+                        "02-2430",
+                        "02-2068"
+                    ],
+                    "type": "double",
+                    "result": 0
+                }
+            ]
+        }
+    ]
+}

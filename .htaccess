@@ -1,0 +1,37 @@
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Allow direct access to api.php without redirects
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Don't redirect api.php requests
+    RewriteCond %{REQUEST_URI} ^/api\.php
+    RewriteRule ^ - [L]
+</IfModule>
+
+# CORS Headers
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, HEAD"
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
+    Header always set Access-Control-Max-Age "86400"
+</IfModule>
+
+# Handle OPTIONS requests
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^ - [L,R=200]
+</IfModule>
+
+# Ensure api.php is not redirected
+<FilesMatch "api\.php$">
+    <IfModule mod_headers.c>
+        Header always set Access-Control-Allow-Origin "*"
+        Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, HEAD"
+        Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
+    </IfModule>
+</FilesMatch>
