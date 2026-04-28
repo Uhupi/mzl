@@ -2,7 +2,6 @@
   import { currentPage, team } from '../stores'
 
   const navItems = [
-    { id: 'dashboard', label: '📊 Übersicht', icon: '📊' },
     { id: 'matches', label: '🎯 Spiele', icon: '🎯' },
     { id: 'players', label: '👥 Spieler', icon: '👥' },
     { id: 'statistics', label: '📈 Statistiken', icon: '📈' }

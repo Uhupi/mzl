@@ -2,7 +2,6 @@
   import { onMount } from 'svelte'
   import { currentPage, loadAll } from './stores'
 
-  import Dashboard from './pages/Dashboard.svelte'
   import Matches from './pages/Matches.svelte'
   import MatchDetail from './pages/MatchDetail.svelte'
   import Players from './pages/Players.svelte'
@@ -29,9 +28,7 @@
         </div>
       </div>
     {:else}
-      {#if $currentPage === 'dashboard'}
-        <Dashboard />
-      {:else if $currentPage === 'matches'}
+      {#if $currentPage === 'matches'}
         <Matches />
       {:else if $currentPage === 'match-detail'}
         <MatchDetail />
