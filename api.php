@@ -58,6 +58,7 @@ try {
         'players' => outputPlayers($data),
         'matches' => outputMatches($data, $param),
         'stats' => outputStats($data),
+        'doubles-pairs' => outputDoublesPairs($data),
         'all' => outputAll($data),
         default => throw new Exception('Endpoint not found', 404)
     };
@@ -311,6 +312,57 @@ function outputStats($data) {
 
 function outputAll($data) {
     echo json_encode($data);
+}
+
+function outputDoublesPairs($data) {
+    $playerMap = array_column($data['team']['players'], 'name', 'id');
+    $pairStats = [];
+
+    foreach ($data['matches'] as $match) {
+        foreach ($match['games'] as $game) {
+            if ($game['type'] !== 'double' || count($game['players']) !== 2) {
+                continue;
+            }
+
+            $players = $game['players'];
+            sort($players);
+            $pairKey = implode('-', $players);
+
+            if (!isset($pairStats[$pairKey])) {
+                $pairStats[$pairKey] = [
+                    'players' => array_map(function ($id) use ($playerMap) {
+                        return [
+                            'id' => $id,
+                            'name' => $playerMap[$id] ?? 'Unknown'
+                        ];
+                    }, $players),
+                    'games' => 0,
+                    'wins' => 0,
+                    'losses' => 0,
+                    'ties' => 0
+                ];
+            }
+
+            $pairStats[$pairKey]['games']++;
+
+            if ($game['result'] === 2) {
+                $pairStats[$pairKey]['wins']++;
+            } elseif ($game['result'] === 1) {
+                $pairStats[$pairKey]['ties']++;
+            } else {
+                $pairStats[$pairKey]['losses']++;
+            }
+        }
+    }
+
+    usort($pairStats, function ($a, $b) {
+        return $b['wins'] <=> $a['wins'];
+    });
+
+    echo json_encode([
+        'pairs' => array_values($pairStats),
+        'count' => count($pairStats)
+    ]);
 }
 
 function enrichPlayersWithNames($games, $players) {
