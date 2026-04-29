@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api.php': {
-        target: 'http://mzl.test',
+        target: 'http://api.mzl.uhupi.com',
         changeOrigin: true,
         rewrite: (path) => path
       }
