@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [svelte()],
   server: {
     proxy: {
-      '/api.php': {
+      '/': {
         target: 'http://api.mzl.uhupi.com',
         changeOrigin: true,
         rewrite: (path) => path
