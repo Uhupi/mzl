@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit(0);
 }
 
-$dataFile = __DIR__ . '/data/5951.json';
+$dataFile = __DIR__ . '/../data/5951.json';
 
 if (!file_exists($dataFile)) {
     http_response_code(404);

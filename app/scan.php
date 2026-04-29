@@ -275,7 +275,7 @@ $data = [
     'matches' => $matches
 ];
 
-file_put_contents("data/$team_id.json", json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+file_put_contents(__DIR__ . "/../data/$team_id.json", json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
 echo "Data saved to data/$team_id.json\n";
 
