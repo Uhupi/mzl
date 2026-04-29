@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { stats } from '../stores'
+  import { stats, doublePairs } from '../stores'
   import StatCard from '../components/StatCard.svelte'
 
   $: playerStats = $stats?.players || []
   $: teamData = $stats?.team || null
+  $: pairs = ($doublePairs || []).filter(p => (p.netWins || 0) >= 0)
 
   function getEfficiencyBadgeColor(efficiency: number): string {
     if (efficiency >= 75) return 'bg-green-100 text-green-800'
@@ -67,6 +68,38 @@
             <span class="text-3xl font-bold text-yellow-600">{teamData.doubles.ties}</span>
           </div>
         </div>
+      </div>
+    </div>
+  {/if}
+
+  <!-- Best Double Pairs -->
+  {#if pairs && pairs.length > 0}
+    <div class="card p-6">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">👥 Top Doppel-Paarungen</h2>
+      <div class="space-y-4">
+        {#each pairs as pair, idx (idx)}
+          <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+            <div class="flex items-center gap-4">
+              <div class="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full font-bold">
+                {idx + 1}
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900">
+                  {pair.pair ? `${pair.pair[0]} & ${pair.pair[1]}` : pair.players?.map(p => p.name).join(' & ') || 'Unbekannt'}
+                </p>
+                <p class="text-sm text-gray-600">
+                  {pair.wins || 0}W - {pair.losses || 0}L {pair.ties && pair.ties > 0 ? `- ${pair.ties}T` : ''}
+                </p>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-3xl font-bold mb-1" class:text-green-600={(pair.netWins || 0) > 0} class:text-red-600={(pair.netWins || 0) < 0} class:text-gray-600={(pair.netWins || 0) === 0}>
+                {(pair.netWins || 0) >= 0 ? '+' : ''}{pair.netWins ?? 0}
+              </div>
+              <p class="text-xs text-gray-500">Netto Punkte</p>
+            </div>
+          </div>
+        {/each}
       </div>
     </div>
   {/if}

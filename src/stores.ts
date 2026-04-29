@@ -1,4 +1,4 @@
-import { writable, derived } from 'svelte/store'
+import { writable, derived, get } from 'svelte/store'
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'https://mzl.test/api.php'
 
@@ -72,6 +72,7 @@ export const team = writable<Team | null>(null)
 export const players = writable<Player[]>([])
 export const matches = writable<Match[]>([])
 export const stats = writable<any>(null)
+export const doublePairs = writable<any[]>([])
 export const currentPage = writable<string>('matches')
 export const selectedMatch = writable<MatchDetail | null>(null)
 export const loading = writable<boolean>(false)
@@ -153,11 +154,20 @@ export async function loadStats() {
   }
 }
 
+export async function loadDoublePairs() {
+  try {
+    const data = await fetchAPI<{ pairs: any[] }>('doubles-pairs')
+    doublePairs.set(data.pairs || [])
+  } catch (err) {
+    error.set(err instanceof Error ? err.message : 'Unknown error')
+  }
+}
+
 export async function loadAll() {
   try {
     loading.set(true)
     error.set(null)
-    await Promise.all([loadTeam(), loadPlayers(), loadMatches(), loadStats()])
+    await Promise.all([loadTeam(), loadPlayers(), loadMatches(), loadStats(), loadDoublePairs()])
   } catch (err) {
     error.set(err instanceof Error ? err.message : 'Unknown error')
   } finally {

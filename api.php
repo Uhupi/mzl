@@ -355,13 +355,25 @@ function outputDoublesPairs($data) {
         }
     }
 
-    usort($pairStats, function ($a, $b) {
-        return $b['wins'] <=> $a['wins'];
+    $validPairs = [];
+    foreach ($pairStats as $key => $pair) {
+        // Skip pairs with unknown players
+        if (in_array('Unknown', array_column($pair['players'], 'name'))) {
+            continue;
+        }
+
+        // Calculate points: +2 for win, +1 for tie, -2 for loss
+        $pair['netWins'] = ($pair['wins'] * 2) + ($pair['ties'] * 1) - ($pair['losses'] * 2);
+        $validPairs[$key] = $pair;
+    }
+
+    usort($validPairs, function ($a, $b) {
+        return $b['netWins'] <=> $a['netWins'];
     });
 
     echo json_encode([
-        'pairs' => array_values($pairStats),
-        'count' => count($pairStats)
+        'pairs' => array_values($validPairs),
+        'count' => count($validPairs)
     ]);
 }
 
