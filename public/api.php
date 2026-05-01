@@ -54,13 +54,13 @@ if (!$endpoint) {
 
 try {
     match ($endpoint) {
-        'team' => outputTeam($data),
-        'players' => outputPlayers($data),
-        'matches' => outputMatches($data, $param),
-        'stats' => outputStats($data, $param),
+        'team'          => outputTeam($data),
+        'players'       => outputPlayers($data),
+        'matches'       => outputMatches($data, $param),
+        'stats'         => outputStats($data, $param),
         'doubles-pairs' => outputDoublesPairs($data, $param),
-        'all' => outputAll($data),
-        default => throw new Exception('Endpoint not found', 404)
+        'all'           => outputAll($data),
+        default         => throw new Exception('Endpoint not found', 404)
     };
 } catch (Exception $e) {
     http_response_code($e->getCode() ?: 400);
