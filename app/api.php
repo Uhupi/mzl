@@ -57,8 +57,8 @@ try {
         'team' => outputTeam($data),
         'players' => outputPlayers($data),
         'matches' => outputMatches($data, $param),
-        'stats' => outputStats($data),
-        'doubles-pairs' => outputDoublesPairs($data),
+        'stats' => outputStats($data, $param),
+        'doubles-pairs' => outputDoublesPairs($data, $param),
         'all' => outputAll($data),
         default => throw new Exception('Endpoint not found', 404)
     };
@@ -201,8 +201,16 @@ function outputMatches($data, $matchIndex) {
     ]);
 }
 
-function outputStats($data) {
+function outputStats($data, $fromDate = null) {
     $matches = $data['matches'];
+
+    // Filter matches by date if provided
+    if ($fromDate) {
+        $matches = array_filter($matches, function ($match) use ($fromDate) {
+            return strtotime($match['date']) >= strtotime($fromDate);
+        });
+    }
+
     $singlesWins = 0;
     $singlesTies = 0;
     $singlesLosses = 0;
@@ -314,11 +322,19 @@ function outputAll($data) {
     echo json_encode($data);
 }
 
-function outputDoublesPairs($data) {
+function outputDoublesPairs($data, $fromDate = null) {
     $playerMap = array_column($data['team']['players'], 'name', 'id');
     $pairStats = [];
+    $matches = $data['matches'];
 
-    foreach ($data['matches'] as $match) {
+    // Filter matches by date if provided
+    if ($fromDate) {
+        $matches = array_filter($matches, function ($match) use ($fromDate) {
+            return strtotime($match['date']) >= strtotime($fromDate);
+        });
+    }
+
+    foreach ($matches as $match) {
         foreach ($match['games'] as $game) {
             if ($game['type'] !== 'double' || count($game['players']) !== 2) {
                 continue;

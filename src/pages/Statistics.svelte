@@ -1,10 +1,14 @@
 <script lang="ts">
-  import { stats, doublePairs } from '../stores'
+  import { stats, doublePairs, matches, selectedDate } from '../stores'
+  import { loadStats, loadDoublePairs, getAvailableDates } from '../stores'
   import StatCard from '../components/StatCard.svelte'
+
+  let availableDates: string[] = []
 
   $: playerStats = $stats?.players || []
   $: teamData = $stats?.team || null
-  $: pairs = ($doublePairs || []).filter(p => (p.netWins || 0) >= 0)
+  $: pairs = ($doublePairs || []).filter((p: any) => (p.netWins || 0) >= 0)
+  $: if ($matches.length > 0) availableDates = getAvailableDates()
 
   function getEfficiencyBadgeColor(efficiency: number): string {
     if (efficiency >= 75) return 'bg-green-100 text-green-800'
@@ -12,12 +16,45 @@
     if (efficiency >= 45) return 'bg-yellow-100 text-yellow-800'
     return 'bg-red-100 text-red-800'
   }
+
+  async function handleDateChange(e: Event) {
+    const target = e.target as HTMLSelectElement
+    const date = target.value || null
+    selectedDate.set(date)
+
+    if (date) {
+      await Promise.all([loadStats(date), loadDoublePairs(date)])
+    } else {
+      await Promise.all([loadStats(), loadDoublePairs()])
+    }
+  }
 </script>
 
 <div class="space-y-6">
-  <div>
-    <h2 class="text-3xl font-bold text-gray-900 mb-2">📊 Statistiken</h2>
-    <p class="text-gray-600">Detaillierte Analyse der Saisonleistung</p>
+  <div class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">📊 Statistiken</h2>
+      <p class="text-gray-600">Detaillierte Analyse der Saisonleistung</p>
+    </div>
+
+    {#if availableDates.length > 0}
+      <div class="card p-4">
+        <label for="date-select" class="block text-sm font-medium text-gray-700 mb-2">
+          Statistiken ab Spiel:
+        </label>
+        <select
+          id="date-select"
+          on:change={handleDateChange}
+          value={$selectedDate || ''}
+          class="w-full md:w-96 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        >
+          <option value="">Alle Spiele</option>
+          {#each availableDates as date}
+            <option value={date}>{date}</option>
+          {/each}
+        </select>
+      </div>
+    {/if}
   </div>
 
   {#if teamData}

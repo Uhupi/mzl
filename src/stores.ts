@@ -77,6 +77,8 @@ export const currentPage = writable<string>('matches')
 export const selectedMatch = writable<MatchDetail | null>(null)
 export const loading = writable<boolean>(false)
 export const error = writable<string | null>(null)
+export const selectedDate = writable<string | null>(null)
+export const availableDates = writable<string[]>([])
 
 // API Functions
 async function fetchAPI<T>(endpoint: string, param?: string | number): Promise<T> {
@@ -141,11 +143,11 @@ export async function loadMatchDetail(id: number) {
   }
 }
 
-export async function loadStats() {
+export async function loadStats(fromDate?: string) {
   try {
     loading.set(true)
     error.set(null)
-    const data = await fetchAPI<any>('stats')
+    const data = await fetchAPI<any>('stats', fromDate)
     stats.set(data)
   } catch (err) {
     error.set(err instanceof Error ? err.message : 'Unknown error')
@@ -154,13 +156,26 @@ export async function loadStats() {
   }
 }
 
-export async function loadDoublePairs() {
+export async function loadDoublePairs(fromDate?: string) {
   try {
-    const data = await fetchAPI<{ pairs: any[] }>('doubles-pairs')
+    const data = await fetchAPI<{ pairs: any[] }>('doubles-pairs', fromDate)
     doublePairs.set(data.pairs || [])
   } catch (err) {
     error.set(err instanceof Error ? err.message : 'Unknown error')
   }
+}
+
+export function getAvailableDates() {
+  const matchesData = get(matches)
+  if (!matchesData.length) return []
+
+  const dates = matchesData
+    .map(m => m.date)
+    .sort()
+    .reverse()
+
+  availableDates.set(dates)
+  return dates
 }
 
 export async function loadAll() {
@@ -168,6 +183,7 @@ export async function loadAll() {
     loading.set(true)
     error.set(null)
     await Promise.all([loadTeam(), loadPlayers(), loadMatches(), loadStats(), loadDoublePairs()])
+    getAvailableDates()
   } catch (err) {
     error.set(err instanceof Error ? err.message : 'Unknown error')
   } finally {
