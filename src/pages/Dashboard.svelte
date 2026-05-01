@@ -8,9 +8,9 @@
   $: topPlayers = playerStats.slice(0, 5)
 </script>
 
-<div class="space-y-8">
+<div class="space-y-2">
   <!-- Hero Section -->
-  <div class="card p-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+  <div class="card p-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
     <h2 class="text-4xl font-bold mb-2">⚽ {$team?.name}</h2>
     <p class="text-blue-100">Kicker Statistiken & Spielergebnisse</p>
   </div>

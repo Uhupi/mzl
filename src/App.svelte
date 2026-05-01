@@ -19,7 +19,7 @@
 <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
   <Navigation />
 
-  <main class="container mx-auto px-4 py-8">
+  <main class="container mx-auto px-2 py-2">
     {#if isLoading}
       <div class="flex items-center justify-center h-64">
         <div class="text-center">
