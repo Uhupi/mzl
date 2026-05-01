@@ -15,20 +15,20 @@
 </script>
 
 {#if $selectedMatch}
-  <div class="space-y-6">
+  <div class="space-y-2">
     <!-- Header -->
     <button
       on:click={() => currentPage.set('matches')}
-      class="text-blue-600 hover:text-blue-700 font-medium mb-4"
+      class="text-blue-600 hover:text-blue-700 font-medium"
     >
       ← Zurück zu Spielen
     </button>
 
-    <div class="card p-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+    <div class="card p-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
       <div class="flex items-center justify-between">
         <div>
           <h1 class="text-4xl font-bold mb-2">
-            Mut zur Lücke vs. {$selectedMatch.opponent}
+            vs. {$selectedMatch.opponent}
           </h1>
           <p class="text-blue-100">
             {new Date($selectedMatch.date).toLocaleDateString('de-DE', {
@@ -48,18 +48,19 @@
     </div>
 
     <!-- Player Statistics -->
-    <div class="card p-6">
+    <div class="card p-2">
       <h2 class="text-2xl font-bold text-gray-900 mb-6">👥 Spielerstatistiken</h2>
       <div class="overflow-x-auto">
         <table class="w-full">
           <thead>
             <tr class="border-b-2 border-gray-200">
-              <th class="text-left py-3 px-4 font-semibold text-gray-700">Spieler</th>
-              <th class="text-center py-3 px-4 font-semibold text-gray-700">Spiele</th>
-              <th class="text-center py-3 px-4 font-semibold text-gray-700">Siege</th>
-              <th class="text-center py-3 px-4 font-semibold text-gray-700">Niederlagen</th>
-              <th class="text-center py-3 px-4 font-semibold text-gray-700">Punkte<br/><span class="text-xs font-normal">(erreicht/möglich)</span></th>
-              <th class="text-center py-3 px-4 font-semibold text-gray-700">Effizienz</th>
+              <th class="text-left py-2 px-1 font-semibold text-gray-700">Spieler</th>
+              <th class="text-center py-2 px-1 font-semibold text-gray-700">Effizienz</th>
+              <th class="text-center py-2 px-1 font-semibold text-gray-700">Punkte<br/><span class="text-xs font-normal">(erreicht/möglich)</span></th>
+              <th class="text-center py-2 px-1 font-semibold text-gray-700">Spiele</th>
+              <th class="text-center py-2 px-1 font-semibold text-gray-700"><span class="hidden md:block">Siege</span> <span class="md:hidden">S</span></th>
+              <th class="text-center py-2 px-1 font-semibold text-gray-700"><span class="hidden md:block">Unentschieden</span> <span class="md:hidden">U</span></th>
+              <th class="text-center py-2 px-1 font-semibold text-gray-700"><span class="hidden md:block">Niederlagen</span> <span class="md:hidden">N</span></th>
             </tr>
           </thead>
           <tbody>

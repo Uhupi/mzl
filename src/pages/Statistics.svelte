@@ -59,7 +59,7 @@
 
   {#if teamData}
     <!-- Team Overview -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 grid-cols-3 gap-4">
       <StatCard label="Gesamt Spiele" value={teamData.matches} />
       <StatCard label="Gesamt Siege" value={teamData.singles.wins + teamData.doubles.wins} />
       <StatCard label="Sieg-Quote" value="{Math.round((
