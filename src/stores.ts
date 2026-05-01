@@ -1,6 +1,6 @@
 import { writable, derived, get } from 'svelte/store'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'https://mzl.test/api.php'
+const API_BASE = import.meta.env.VITE_API_BASE || '/api.php'
 
 interface Team {
   name: string
