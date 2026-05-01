@@ -53,8 +53,8 @@
             </div>
             <div class="text-right">
               <div class={`text-3xl font-bold mb-2 ${
-                String(match.result).startsWith('2:') ? 'text-green-600' :
-                String(match.result).endsWith(':2') ? 'text-red-600' :
+                Number(match.result) > 16 ? 'text-green-600' :
+                Number(match.result) < 16 ? 'text-red-600' :
                 'text-yellow-600'
               }`}>
                 {match.result}
