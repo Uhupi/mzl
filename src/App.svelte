@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { currentPage, loadAll } from './stores'
+  import { currentPage, loadAll, team } from './stores'
 
   import Matches from './pages/Matches.svelte'
   import MatchDetail from './pages/MatchDetail.svelte'
@@ -14,6 +14,16 @@
     await loadAll()
     isLoading = false
   })
+
+  $: if ($team?.logo) {
+    const link = document.querySelector('link[rel="icon"]') || document.createElement('link')
+    link.rel = 'icon'
+    link.href = $team.logo
+    link.type = 'image/svg+xml'
+    if (!document.querySelector('link[rel="icon"]')) {
+      document.head.appendChild(link)
+    }
+  }
 </script>
 
 <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
