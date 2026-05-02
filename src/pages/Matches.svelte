@@ -37,9 +37,6 @@
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
-                })} · {new Date(match.date).toLocaleTimeString('de-DE', {
-                  hour: '2-digit',
-                  minute: '2-digit'
                 })}
               </p>
               <div class="flex gap-2 flex-wrap">
