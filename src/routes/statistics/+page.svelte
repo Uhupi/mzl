@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { stats, doublePairs, matches, selectedDate } from '../stores'
-  import { loadStats, loadDoublePairs, getAvailableDates } from '../stores'
-  import StatCard from '../components/StatCard.svelte'
+  import { stats, doublePairs, matches, selectedDate } from '$lib/stores'
+  import { loadStats, loadDoublePairs, getAvailableDates } from '$lib/stores'
+  import StatCard from '$lib/components/StatCard.svelte'
 
   let availableDates: string[] = []
 

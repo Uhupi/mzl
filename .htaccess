@@ -2,7 +2,7 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Allow direct access to api.php without redirects
+    # Allow direct access to existing files and directories
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
@@ -10,6 +10,9 @@
     # Don't redirect api.php requests
     RewriteCond %{REQUEST_URI} ^/api\.php
     RewriteRule ^ - [L]
+
+    # Route all other requests to SvelteKit build for SPA routing
+    RewriteRule ^(.*)$ /build/index.html [QSA,L]
 </IfModule>
 
 # CORS Headers

@@ -1,10 +1,5 @@
 <script lang="ts">
-  import { matches, currentPage, loadMatchDetail } from '../stores'
-
-  async function viewMatch(id: number) {
-    await loadMatchDetail(id)
-    currentPage.set('match-detail')
-  }
+  import { matches } from '$lib/stores'
 
   $: sortedMatches = [...($matches || [])].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 </script>
@@ -22,9 +17,9 @@
   {:else}
     <div class="grid gap-4">
       {#each sortedMatches as match (match.id)}
-        <button
-          on:click={() => viewMatch(match.id)}
-          class="card p-6 hover:shadow-xl transition-all text-left"
+        <a
+          href="/matches/{match.id}"
+          class="card p-6 hover:shadow-xl transition-all text-left block"
         >
           <div class="flex items-center justify-between">
             <div class="flex-1">
@@ -59,7 +54,7 @@
               <span class="text-xs text-gray-600">Ergebnis</span>
             </div>
           </div>
-        </button>
+        </a>
       {/each}
     </div>
   {/if}

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { selectedMatch, currentPage } from '../stores'
-  import PlayerStatRow from '../components/PlayerStatRow.svelte'
+  import { selectedMatch } from '$lib/stores'
+  import PlayerStatRow from '$lib/components/PlayerStatRow.svelte'
 
   const gameTypeLabel = {
     single: '📍 Einzel',
@@ -17,12 +17,12 @@
 {#if $selectedMatch}
   <div class="space-y-2">
     <!-- Header -->
-    <button
-      on:click={() => currentPage.set('matches')}
+    <a
+      href="/matches"
       class="text-blue-600 hover:text-blue-700 font-medium"
     >
       ← Zurück zu Spielen
-    </button>
+    </a>
 
     <div class="card p-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
       <div class="flex items-center justify-between">
@@ -101,11 +101,11 @@
 {:else}
   <div class="text-center py-8">
     <p class="text-gray-600">Spiel nicht gefunden</p>
-    <button
-      on:click={() => currentPage.set('matches')}
-      class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+    <a
+      href="/matches"
+      class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
     >
       Zurück zu Spielen
-    </button>
+    </a>
   </div>
 {/if}

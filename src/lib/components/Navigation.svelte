@@ -1,11 +1,16 @@
 <script lang="ts">
-  import { currentPage, team } from '../stores'
+  import { page } from '$app/stores'
+  import { team } from '../stores'
 
   const navItems = [
-    { id: 'matches', label: '🎯 Spiele', icon: '🎯' },
-    { id: 'players', label: '👥 Spieler', icon: '👥' },
-    { id: 'statistics', label: '📈 Statistiken', icon: '📈' }
+    { path: '/matches', label: '🎯 Spiele', icon: '🎯' },
+    { path: '/players', label: '👥 Spieler', icon: '👥' },
+    { path: '/statistics', label: '📈 Statistiken', icon: '📈' }
   ]
+
+  function isActive(path: string) {
+    return $page.url.pathname === path
+  }
 </script>
 
 <header class="bg-white shadow-md sticky top-0 z-50">
@@ -22,17 +27,17 @@
     </div>
 
     <div class="flex gap-2 overflow-x-auto">
-      {#each navItems as item (item.id)}
-        <button
-          on:click={() => currentPage.set(item.id)}
+      {#each navItems as item (item.path)}
+        <a
+          href={item.path}
           class={`whitespace-nowrap px-2 py-2 rounded-lg font-medium transition-all ${
-            $currentPage === item.id
+            isActive(item.path)
               ? 'bg-blue-600 text-white shadow-md'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           }`}
         >
           {item.label}
-        </button>
+        </a>
       {/each}
     </div>
   </nav>

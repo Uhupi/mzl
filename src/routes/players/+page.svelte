@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { players } from '../stores'
+  import { players } from '$lib/stores'
 </script>
 
 <div class="space-y-6">

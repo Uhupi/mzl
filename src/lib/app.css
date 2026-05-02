@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-50 to-slate-100;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow;
+  }
+
+  .badge-win {
+    @apply bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  .badge-loss {
+    @apply bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  .badge-tie {
+    @apply bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  .stat-card {
+    @apply card p-6 text-center;
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold text-blue-600 mb-2;
+  }
+
+  .stat-label {
+    @apply text-gray-600 text-sm font-medium;
+  }
+}

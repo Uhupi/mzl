@@ -1,17 +1,8 @@
 import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
-import fs from 'fs'
-import path from 'path'
+import { sveltekit } from '@sveltejs/kit/vite'
 
 export default defineConfig({
-  plugins: [
-    svelte(),
-    {
-      name: 'exclude-php-files',
-      apply: 'build',
-      enforce: 'post',
-    }
-  ],
+  plugins: [sveltekit()],
   server: {
     proxy: {
       '/api.php': {
