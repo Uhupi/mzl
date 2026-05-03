@@ -1,18 +1,16 @@
-# Enable mod_rewrite
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteBase /
 
     # Allow direct access to existing files and directories
-    RewriteCond %{REQUEST_FILENAME} -f [OR]
-    RewriteCond %{REQUEST_FILENAME} -d
-    RewriteRule ^ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
 
-    # Don't redirect api.php requests
-    RewriteCond %{REQUEST_URI} ^/api\.php
-    RewriteRule ^ - [L]
+    # Don't rewrite api.php
+    RewriteCond %{REQUEST_URI} !^/api\.php$
 
-    # Route all other requests to SvelteKit build for SPA routing
-    RewriteRule ^(.*)$ /build/index.html [QSA,L]
+    # Route all other requests to index.html for SPA routing
+    RewriteRule ^(.*)$ /index.html [QSA,L]
 </IfModule>
 
 # CORS Headers
