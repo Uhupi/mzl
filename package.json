@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && npm run build:copy",
+    "build:copy": "node scripts/copy-files.js",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
