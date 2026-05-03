@@ -7,10 +7,6 @@
     { path: '/players', label: '👥 Spieler', icon: '👥' },
     { path: '/statistics', label: '📈 Statistiken', icon: '📈' }
   ]
-
-  function isActive(path: string) {
-    return $page.url.pathname === path
-  }
 </script>
 
 <header class="bg-white shadow-md sticky top-0 z-50">
@@ -30,8 +26,9 @@
       {#each navItems as item (item.path)}
         <a
           href={item.path}
+          data-sveltekit-reload={false}
           class={`whitespace-nowrap px-2 py-2 rounded-lg font-medium transition-all ${
-            isActive(item.path)
+            $page.url.pathname === item.path
               ? 'bg-blue-600 text-white shadow-md'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           }`}
