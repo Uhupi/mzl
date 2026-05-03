@@ -6,33 +6,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
 
-    # Don't rewrite api.php
-    RewriteCond %{REQUEST_URI} !^/api\.php$
-
     # Route all other requests to index.html for SPA routing
     RewriteRule ^(.*)$ /index.html [QSA,L]
 </IfModule>
-
-# CORS Headers
-<IfModule mod_headers.c>
-    Header always set Access-Control-Allow-Origin "*"
-    Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, HEAD"
-    Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
-    Header always set Access-Control-Max-Age "86400"
-</IfModule>
-
-# Handle OPTIONS requests
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{REQUEST_METHOD} OPTIONS
-    RewriteRule ^ - [L,R=200]
-</IfModule>
-
-# Ensure api.php is not redirected
-<FilesMatch "api\.php$">
-    <IfModule mod_headers.c>
-        Header always set Access-Control-Allow-Origin "*"
-        Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, HEAD"
-        Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
-    </IfModule>
-</FilesMatch>
