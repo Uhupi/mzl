@@ -2,10 +2,21 @@
     RewriteEngine On
     RewriteBase /
 
-    # Allow direct access to existing files and directories
+    # Don't rewrite files or directories that exist
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Don't rewrite _app directory (SvelteKit immutable assets)
+    RewriteCond %{REQUEST_URI} !^/_app/
 
     # Route all other requests to index.html for SPA routing
     RewriteRule ^(.*)$ /index.html [QSA,L]
 </IfModule>
+
+# Ensure immutable assets are cached aggressively
+<FilesMatch "^/\_app/immutable/.*\.(js|css)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "public, immutable, max-age=31536000"
+        Header set Content-Type "application/javascript"
+    </IfModule>
+</FilesMatch>
